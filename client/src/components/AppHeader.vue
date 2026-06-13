@@ -23,6 +23,10 @@
           <el-icon><Calendar /></el-icon>
           <span>练琴打卡</span>
         </router-link>
+        <router-link to="/works" class="nav-item" :class="{ active: $route.name === 'Works' || $route.name === 'WorkDetail' }">
+          <el-icon><Picture /></el-icon>
+          <span>作品墙</span>
+        </router-link>
       </nav>
       
       <div class="header-right">

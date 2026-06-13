@@ -45,6 +45,24 @@ const routes = [
     meta: { title: '练琴打卡', requiresAuth: true }
   },
   {
+    path: '/works',
+    name: 'Works',
+    component: () => import('../views/Works.vue'),
+    meta: { title: '练习成果墙' }
+  },
+  {
+    path: '/works/:id',
+    name: 'WorkDetail',
+    component: () => import('../views/WorkDetail.vue'),
+    meta: { title: '作品详情' }
+  },
+  {
+    path: '/publish-work',
+    name: 'PublishWork',
+    component: () => import('../views/PublishWork.vue'),
+    meta: { title: '发布作品', requiresAuth: true }
+  },
+  {
     path: '/messages',
     name: 'Messages',
     component: () => import('../views/Messages.vue'),

@@ -68,4 +68,16 @@ export const recommendApi = {
   pieces: (userId) => api.get(`/recommendations/pieces/${userId}`)
 }
 
+export const workApi = {
+  list: (params) => api.get('/works', { params }),
+  get: (id, params) => api.get(`/works/${id}`, { params }),
+  create: (data) => api.post('/works', data),
+  remove: (id) => api.delete(`/works/${id}`),
+  like: (id, data) => api.post(`/works/${id}/like`, data),
+  unlike: (id, params) => api.delete(`/works/${id}/like`, { params }),
+  listComments: (id) => api.get(`/works/${id}/comments`),
+  addComment: (id, data) => api.post(`/works/${id}/comments`, data),
+  removeComment: (workId, commentId) => api.delete(`/works/${workId}/comments/${commentId}`)
+}
+
 export default api

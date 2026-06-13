@@ -1,0 +1,74 @@
+[
+  {
+    "id": "w001",
+    "userId": "u001",
+    "instrument": "古典吉他",
+    "piece": "爱的罗曼史",
+    "content": "终于把整首曲子练下来了！轮指部分还有点生涩，但整体感觉进步很大。分享一下我的练习心得：先慢练分解和弦，把每个音都弹清楚，再逐渐提速。",
+    "mediaUrl": "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop",
+    "mediaType": "image",
+    "likesCount": 24,
+    "commentsCount": 8,
+    "createdAt": "2026-06-10T20:30:00.000Z"
+  },
+  {
+    "id": "w002",
+    "userId": "u002",
+    "instrument": "钢琴",
+    "piece": "肖邦夜曲 Op.9 No.2",
+    "content": "这首夜曲练了快两个月了，今天终于录了一个比较满意的版本。肖邦的曲子真的太有魅力了，每个音符都在诉说故事。",
+    "mediaUrl": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=600&h=400&fit=crop",
+    "mediaType": "image",
+    "likesCount": 56,
+    "commentsCount": 15,
+    "createdAt": "2026-06-09T15:00:00.000Z"
+  },
+  {
+    "id": "w003",
+    "userId": "u003",
+    "instrument": "小提琴",
+    "piece": "铃木教程第一册 - 轻舟荡漾",
+    "content": "学小提琴半年啦！从最开始的锯木头到现在能拉完整的曲子，真的很有成就感。感谢我的老师，也感谢一直坚持的自己～",
+    "mediaUrl": "https://images.unsplash.com/photo-1612225330812-01a9c6b355ec?w=600&h=400&fit=crop",
+    "mediaType": "image",
+    "likesCount": 32,
+    "commentsCount": 10,
+    "createdAt": "2026-06-08T19:20:00.000Z"
+  },
+  {
+    "id": "w004",
+    "userId": "u004",
+    "instrument": "架子鼓",
+    "piece": "Take Five",
+    "content": "爵士鼓的五拍节奏太有意思了！练了好久终于踩稳了这个节拍。分享一下我练鼓的小技巧：先从慢速度开始，用节拍器跟着练，稳了再提速。",
+    "mediaUrl": "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=600&h=400&fit=crop",
+    "mediaType": "image",
+    "likesCount": 41,
+    "commentsCount": 7,
+    "createdAt": "2026-06-07T21:45:00.000Z"
+  },
+  {
+    "id": "w005",
+    "userId": "u005",
+    "instrument": "竹笛",
+    "piece": "姑苏行",
+    "content": "笛子的江南韵味真的太美了！《姑苏行》这首曲子百吹不厌。今天天气好，在公园练了一上午，吸引了好几个大爷来听，哈哈。",
+    "mediaUrl": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600&h=400&fit=crop",
+    "mediaType": "image",
+    "likesCount": 28,
+    "commentsCount": 12,
+    "createdAt": "2026-06-06T10:30:00.000Z"
+  },
+  {
+    "id": "w006",
+    "userId": "u001",
+    "instrument": "尤克里里",
+    "piece": "小手拉大手",
+    "content": "尤克里里真的是最容易上手的乐器了！这首歌练了三天就能弹唱了，超有成就感的～",
+    "mediaUrl": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&h=400&fit=crop",
+    "mediaType": "image",
+    "likesCount": 18,
+    "commentsCount": 5,
+    "createdAt": "2026-06-05T16:00:00.000Z"
+  }
+]
