@@ -2,9 +2,10 @@
   <div class="work-card card" @click="goDetail">
     <div v-if="work.mediaUrl" class="work-media">
       <img v-if="work.mediaType === 'image'" :src="work.mediaUrl" alt="作品图片" />
-      <div v-else class="video-placeholder">
+      <div v-else class="video-placeholder" @click.stop="openMediaLink">
         <el-icon size="48"><VideoPlay /></el-icon>
-        <span>视频</span>
+        <span>点击播放视频</span>
+        <span class="video-tag">视频</span>
       </div>
     </div>
     <div class="work-content">
@@ -83,6 +84,12 @@ const goDetail = () => {
   router.push(`/works/${props.work.id}`)
 }
 
+const openMediaLink = () => {
+  if (props.work.mediaUrl) {
+    window.open(props.work.mediaUrl, '_blank')
+  }
+}
+
 const handleLike = async () => {
   if (!userStore.isLoggedIn) {
     requireLogin()
@@ -141,9 +148,42 @@ const handleLike = async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--text-secondary);
   background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.video-placeholder:hover {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+}
+
+.video-placeholder:hover .el-icon {
+  transform: scale(1.1);
+}
+
+.video-placeholder .el-icon {
+  color: var(--primary-color);
+  transition: transform 0.3s;
+}
+
+.video-placeholder span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.video-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px !important;
+  font-weight: 600 !important;
 }
 
 .work-content {

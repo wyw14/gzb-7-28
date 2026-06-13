@@ -70,5 +70,17 @@
     "likesCount": 18,
     "commentsCount": 5,
     "createdAt": "2026-06-05T16:00:00.000Z"
+  },
+  {
+    "id": "w007",
+    "userId": "u002",
+    "instrument": "钢琴",
+    "piece": "梦中的婚礼",
+    "content": "终于把《梦中的婚礼》完整弹下来了！录了个视频分享给大家，虽然还有一些小瑕疵，但继续加油！",
+    "mediaUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "mediaType": "video",
+    "likesCount": 45,
+    "commentsCount": 12,
+    "createdAt": "2026-06-04T14:30:00.000Z"
   }
 ]

@@ -53,7 +53,7 @@
             </el-radio-group>
           </el-form-item>
           
-          <el-form-item label="媒体链接" v-if="form.mediaType">
+          <el-form-item label="媒体链接" prop="mediaUrl" v-if="form.mediaType">
             <el-input 
               v-model="form.mediaUrl" 
               :placeholder="form.mediaType === 'image' ? '请输入图片链接' : '请输入视频链接'"
@@ -122,6 +122,10 @@ const rules = {
   content: [
     { required: true, message: '请输入练习心得', trigger: 'blur' },
     { min: 10, message: '心得内容至少10个字', trigger: 'blur' }
+  ],
+  mediaUrl: [
+    { required: true, message: '请输入媒体链接', trigger: 'blur' },
+    { type: 'url', message: '请输入有效的链接地址', trigger: 'blur' }
   ]
 }
 

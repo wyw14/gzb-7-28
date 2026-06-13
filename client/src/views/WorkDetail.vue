@@ -13,8 +13,23 @@
             <div v-if="work.mediaUrl" class="work-media">
               <img v-if="work.mediaType === 'image'" :src="work.mediaUrl" alt="作品图片" />
               <div v-else class="video-container">
-                <el-icon size="64"><VideoPlay /></el-icon>
-                <p>视频播放</p>
+                <video 
+                  v-if="isVideoPlayable" 
+                  :src="work.mediaUrl" 
+                  controls 
+                  class="video-player"
+                />
+                <div v-else class="video-placeholder" @click="openMediaLink">
+                  <el-icon size="64"><VideoPlay /></el-icon>
+                  <p class="video-title">点击播放视频</p>
+                  <p class="video-hint">将在新窗口打开</p>
+                </div>
+                <div class="video-actions">
+                  <el-button type="primary" size="small" @click="openMediaLink">
+                    <el-icon><Open /></el-icon>
+                    在新窗口打开
+                  </el-button>
+                </div>
               </div>
             </div>
             
@@ -208,7 +223,7 @@ import { workApi, invitationApi } from '../api'
 import { ElMessage } from 'element-plus'
 import { 
   MagicStick, Notebook, Clock, Star, StarFilled, ChatDotRound, 
-  ChatLineSquare, VideoPlay, Picture 
+  ChatLineSquare, VideoPlay, Picture, Open
 } from '@element-plus/icons-vue'
 
 const route = useRoute()
@@ -240,6 +255,18 @@ const sharedInstruments = computed(() => {
   const shared = mine.filter(i => theirs.includes(i))
   return shared.length ? shared : theirs
 })
+
+const isVideoPlayable = computed(() => {
+  if (!work.value?.mediaUrl) return false
+  const url = work.value.mediaUrl.toLowerCase()
+  return url.endsWith('.mp4') || url.endsWith('.webm') || url.endsWith('.ogg')
+})
+
+const openMediaLink = () => {
+  if (work.value?.mediaUrl) {
+    window.open(work.value.mediaUrl, '_blank')
+  }
+}
 
 const formatTime = (time) => {
   const date = new Date(time)
@@ -417,10 +444,56 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px;
+  padding: 40px 20px;
   color: var(--text-secondary);
   background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-  gap: 12px;
+  gap: 16px;
+}
+
+.video-player {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  background: #000;
+}
+
+.video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px 60px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.video-placeholder:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.02);
+}
+
+.video-placeholder .el-icon {
+  color: var(--primary-color);
+}
+
+.video-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.video-hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.video-actions {
+  margin-top: 8px;
 }
 
 .work-info {
